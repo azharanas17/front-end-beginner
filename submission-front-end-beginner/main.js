@@ -90,7 +90,14 @@ function makeBook(bookObject) {
             addBookToCompleted(bookObject.id);
         });
 
-        container.append(yButton);
+        const xButton = document.createElement('button');
+        xButton.classList.add('x-button');
+        xButton.innerText = "Hapus buku";
+        
+        xButton.addEventListener('click', function() {
+            removeBookFromCompleted(bookObject.id);
+        });
+        container.append(yButton, xButton);
     }
 
     return container;
