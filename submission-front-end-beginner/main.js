@@ -21,9 +21,11 @@ function addBook() {
     const textTitle = document.getElementById("inputBookTitle").value;
     const textAuthor = document.getElementById("inputBookAuthor").value;
     const numberYear = document.getElementById("inputBookYear").value;
+    const checkCompleted = document.getElementById("inputBookIsComplete").checked;
+    console.log(checkCompleted);
     const generateID = generateId();
 
-    const bookObject = generateBookObject(generateID, textTitle, textAuthor, numberYear, false);
+    const bookObject = generateBookObject(generateID, textTitle, textAuthor, numberYear, checkCompleted);
     books.push(bookObject);
 
     console.log(books);
